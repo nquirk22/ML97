@@ -6,9 +6,11 @@
 *)
 
 
-(*********** Flip *********)
-(* 
-    "Flips alternate elements of any list" 
+(*********** FLIP *********)
+(*
+ 
+Flips alternate elements of any list 
+
 *)
 
 fun flip (nil)      = nil
@@ -16,11 +18,13 @@ fun flip (nil)      = nil
   | flip (x::y::zs) = y::x::flip(zs);
 
 
-(********* DeleteIth *********)
+(********* DELETEITH *********)
 (* 
-    "Returns a list with the ith memeber removed. 
-    If i is greater than the length of the list,
-    the list is returned unchanged." 
+
+Returns a list with the ith memeber removed. 
+If i is greater than the length of the list,
+    the list is returned unchanged.
+
 *)
 
 fun deleteIth (x::xs, 1) = xs
@@ -28,20 +32,31 @@ fun deleteIth (x::xs, 1) = xs
   | deleteIth (nil, i)   = nil;
 
 
-(******** PigLatinize ********)
-(* 
-    "Converts any word into its piglatin version." 
-*)
+(******** PIGLATINIZE ********)
+(*
+ 
+Converts any word into its piglatin version. 
 
-fun piglatinize (x) = piglatinizeaux ((explode x), "yay")				     
-and piglatinizeaux (x, suffix) = if isVowel (x) then (implode(x) ^ suffix)
-				 else piglatinizeaux (rotate (x), "ay")						     
-and rotate (nil)   = nil
-  | rotate (x::xs) = xs @ [x]			      
-and isVowel (#"a"::_) = true
+*)
+					     
+(* rotates a list once *)
+fun rotate (nil) = nil
+  | rotate (x::xs) = xs @ [x]; 
+
+(* checks if first char in list  matches a vowel *)
+fun isVowel (#"a"::_) = true
   | isVowel (#"e"::_) = true
   | isVowel (#"i"::_) = true
   | isVowel (#"o"::_) = true
   | isVowel (#"u"::_) = true
   | isVowel (_)       = false;
+
+(* on first run, if first char is vowel, concatenates imploded list with "yay"
+    otherwise, recurses on a rotated list with suffix "ay" *)
+fun piglatinizeaux (x, suffix) = if isVowel (x) then (implode(x) ^ suffix)
+				 else piglatinizeaux (rotate (x), "ay");	
+
+(* accepts a string, explodes it into chars, and passes it to helper
+    piglatinaux with initial suffix *)
+fun piglatinize (x) = piglatinizeaux ((explode x), "yay");
 
