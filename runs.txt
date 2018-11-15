@@ -1,0 +1,57 @@
+Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
+- 
+[opening /tmp/emacs-region94121xU]
+val flip = fn : 'a list -> 'a list
+val it = () : unit
+- 
+[opening /tmp/emacs-region9412C8a]
+val deleteIth = fn : 'a list * int -> 'a list
+val it = () : unit
+- 
+[opening /tmp/emacs-region9412PGh]
+val rotate = fn : 'a list -> 'a list
+val it = () : unit
+- 
+[opening /tmp/emacs-region9412cQn]
+val isVowel = fn : char list -> bool
+val it = () : unit
+- 
+[opening /tmp/emacs-region9412pat]
+val piglatinizeaux = fn : char list * string -> string
+val it = () : unit
+- 
+[opening /tmp/emacs-region94122kz]
+val piglatinize = fn : string -> string
+val it = () : unit
+- 
+- 
+- flip [1, 2, 3, 4, 5, 6];
+val it = [2,1,4,3,6,5] : int list
+- flip [1.0, 2.0, 3.0, 4.0, 5.0];
+val it = [2.0,1.0,4.0,3.0,5.0] : real list
+- flip [#"a", #"b", #"c", #"d", #"e"];
+val it = [#"b",#"a",#"d",#"c",#"e"] : char list
+- flip [#"a"];
+val it = [#"a"] : char list
+- 
+- 
+- deleteIth ([1, 2, 3, 4, 5, 6], 3);
+val it = [1,2,4,5,6] : int list
+- deleteIth ([1, 2, 3, 4, 5, 6], 7);
+val it = [1,2,3,4,5,6] : int list
+- deleteIth ([#"a", #"b", #"c", #"d"], 2);
+val it = [#"a",#"c",#"d"] : char list
+- deleteIth ([#"a", #"b", #"c", #"d"], 1);
+val it = [#"b",#"c",#"d"] : char list
+- 
+- 
+- piglatinize "able";
+val it = "ableyay" : string
+- piglatinize "stripe";
+val it = "ipestray" : string
+- piglatinize "banana";
+val it = "ananabay" : string
+- piglatinize "queue";
+val it = "ueueqay" : string
+- 
+- 
