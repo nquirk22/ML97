@@ -1,3 +1,10 @@
+%%% This file has been annotated. All annotations begin with %%%
+
+%%% Nathan Quirk
+%%% Homework 2
+%%% Submitted 11.15.18
+%%% Illustrative runs of FLIP, DELETE ITH, and PIGLATINIZE functions
+
 Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
 - 
 [opening /tmp/emacs-region94121xU]
@@ -25,6 +32,8 @@ val piglatinize = fn : string -> string
 val it = () : unit
 - 
 - 
+%%% FLIP %%%
+%%%%%%%%%%
 - flip [1, 2, 3, 4, 5, 6];
 val it = [2,1,4,3,6,5] : int list
 - flip [1.0, 2.0, 3.0, 4.0, 5.0];
@@ -35,6 +44,8 @@ val it = [#"b",#"a",#"d",#"c",#"e"] : char list
 val it = [#"a"] : char list
 - 
 - 
+%%% DELETE ITH %%%
+%%%%%%%%%%%%%%%%
 - deleteIth ([1, 2, 3, 4, 5, 6], 3);
 val it = [1,2,4,5,6] : int list
 - deleteIth ([1, 2, 3, 4, 5, 6], 7);
@@ -45,6 +56,8 @@ val it = [#"a",#"c",#"d"] : char list
 val it = [#"b",#"c",#"d"] : char list
 - 
 - 
+%%% PIGLATINIZE %%%
+%%%%%%%%%%%%%%%%%
 - piglatinize "able";
 val it = "ableyay" : string
 - piglatinize "stripe";
