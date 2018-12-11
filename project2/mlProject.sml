@@ -46,18 +46,18 @@ fun dash (num) = (tab num; print "-\n");
 
 fun displayNode (node, num, prnt) = (tab num; prnt node; print "\n");
 
-fun displayTreeIndent (empty, num, prnt) = dash(num + 1)
+fun displayTreeIndent (empty, num,prnt) = dash(num + 1)
 				  
-  | displayTreeIndent (bTree(node, empty, empty), num, prnt) = (displayNode(node, num + 1, prnt))
+  | displayTreeIndent (bTree(node,empty,empty), num, prnt) = (displayNode(node, num + 1, prnt))
 								   
-  | displayTreeIndent (bTree(node, left,  right), num, prnt) = (displayNode(node, num + 1, prnt);
-								displayTreeIndent(left,  num + 1, prnt);
-								displayTreeIndent(right, num + 1, prnt));
+  | displayTreeIndent (bTree(node,left,right),  num, prnt) = (displayNode(node, num + 1, prnt);
+							 displayTreeIndent(left, num + 1,prnt);
+							 displayTreeIndent(right,num + 1,prnt));
 
 fun displayTree (empty, _) = print "empty tree\n"
   | displayTree ((bTree(node, left,  right)), prnt) = (displayNode(node, 0, prnt);
-						       displayTreeIndent(left,  0, prnt);
-						       displayTreeIndent(right, 0, prnt));
+						displayTreeIndent(left,  0, prnt);
+						displayTreeIndent(right, 0, prnt));
 
 
 (* TEST DATA *)
