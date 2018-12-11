@@ -1,3 +1,12 @@
+%%% This file has been annotated. All annotations begin with %%%
+
+%%% Nathan Quirk
+%%% ML Project 
+%%% Submitted 12.11.18
+%%% Illustrative runs of Binary Tree
+%%%     Traversals and Displays
+
+
 Standard ML of New Jersey v110.78 [built: Thu Jul 23 11:21:58 2015]
 - use "mlProject.sml";
 [opening mlProject.sml]
@@ -29,6 +38,12 @@ val t4 = bTree ("A",bTree ("B",bTree #,bTree #),bTree ("I",bTree #,empty))
 val it = () : unit
 - 
 - 
+%%% BEGIN RUNS %%%
+%%%
+%%% Test Tree "t1"
+%%% val t1 = bTree(1,
+%%%        bTree(2,bTree(3,empty, empty), bTree(4,empty, empty)),
+%%%        bTree(5,bTree(6,empty, empty),bTree(7,empty, empty)));
 - preOrder(t1);
 val it = [1,2,3,4,5,6,7] : int list
 - inOrder(t1);
@@ -47,6 +62,10 @@ val it = [3,4,2,6,7,5,1] : int list
 val it = () : unit
 - 
 - 
+%%% Test Tree "t2"
+%%% val t2 = bTree(A,
+%%%        bTree(B,bTree(D,empty, empty), bTree(E,empty, empty)),
+%%%        bTree(C,bTree(F,empty, empty),bTree(G,empty, empty)));
 - preOrder(t2);
 val it = [A,B,D,E,C,F,G] : X list
 - inOrder(t2);
@@ -65,6 +84,9 @@ val it = [D,E,B,F,G,C,A] : X list
 val it = () : unit
 - 
 - 
+%%% Test Tree "t3"
+%%% val t3 = bTree(1.22, 
+%%%        bTree(2.33,empty, empty), bTree(3.44,empty,empty));
 - preOrder(t3);
 val it = [1.22,2.33,3.44] : real list
 - inOrder(t3);
@@ -79,38 +101,19 @@ val it = [2.33,3.44,1.22] : real list
 val it = () : unit
 - 
 - 
-- preOrder(t4);
-val it = ["A","B","C","E","D","F","G","H","I","J","K","L",...] : string list
-- Control.Print.printDepth := 200;
-[autoloading]
-[library $smlnj/compiler/current.cm is stable]
-[library $smlnj/compiler/x86.cm is stable]
-[library $smlnj/viscomp/core.cm is stable]
-[library $smlnj/viscomp/basics.cm is stable]
-[library $smlnj/viscomp/elabdata.cm is stable]
-[library $smlnj/viscomp/elaborate.cm is stable]
-[library $smlnj/MLRISC/Lib.cm is stable]
-[library $SMLNJ-MLRISC/Lib.cm is stable]
-[library $smlnj/viscomp/debugprof.cm is stable]
-[library $SMLNJ-LIB/Util/smlnj-lib.cm is stable]
-[library $smlnj/smlnj-lib/pp-lib.cm is stable]
-[library $SMLNJ-LIB/PP/pp-lib.cm is stable]
-[library $html-lib.cm(=$SMLNJ-LIB/HTML)/html-lib.cm is stable]
-[library $smlnj/MLRISC/Control.cm is stable]
-[library $SMLNJ-MLRISC/Control.cm is stable]
-[library $controls-lib.cm(=$SMLNJ-LIB/Controls)/controls-lib.cm is stable]
-[library $smlnj/smlnj-lib/controls-lib.cm is stable]
-[autoloading done]
-val it = () : unit
-- Control.Print.printLength := 200;
-val it = () : unit
-- TAKE OUT!!!!!
-= 
-= ;
-stdIn:28.1-28.5 Error: unbound variable or constructor: TAKE
-stdIn:28.6-28.9 Error: unbound variable or constructor: OUT
-stdIn:28.9-28.14 Error: unbound variable or constructor: !!!!!
 - 
+%%% Test Tree "t4"
+%%% val t4 = bTree("A",
+%%%        bTree("B",
+%%%                  bTree("C",bTree("E",empty,empty), empty),
+%%%                  bTree("D",
+%%%                        bTree("F",empty,empty),
+%%%                        bTree("G",bTree("H",empty,empty), empty))),
+%%%        bTree("I",
+%%%                  bTree("J",empty, bTree("K",
+%%%                     bTree("L",empty, empty),
+%%%                     bTree("M",empty, empty))),
+%%%                  empty));
 - preOrder(t4);
 val it = ["A","B","C","E","D","F","G","H","I","J","K","L","M"] : string list
 - inOrder(t4);
@@ -138,3 +141,4 @@ val it = ["E","C","F","H","G","D","B","L","M","K","J","I","A"] : string list
       -
 val it = () : unit
 - 
+%%% END RUN %%%

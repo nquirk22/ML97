@@ -1,3 +1,10 @@
+(* 
+** Nathan Quirk
+** ML Project - Binary Trees
+** CSC 345
+** Submitted 12.11.18
+*)
+
 
 (* DATATYPES *)
 datatype 'a BT = empty | bTree of 'a * 'a BT * 'a BT ;
